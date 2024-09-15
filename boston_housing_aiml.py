@@ -49,3 +49,50 @@ print(f"Mean Squared Error (MSE): {mse:.4f}")
 print(f"Root Mean Squared Error (RMSE): {rmse:.4f}")
 print(f"Mean Absolute Error (MAE): {mae:.4f}")
 print(f"R² Score (Test): {r2:.4f}")
+
+# Plotting actual vs predicted values
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, color='blue', alpha=0.7)
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red', linestyle='--')
+plt.xlabel('Actual Values')
+plt.ylabel('Predicted Values')
+plt.title('Actual vs Predicted Values')
+plt.grid(True)
+plt.savefig('/home/vivek/Downloads/boston-housing/plots/actual_vs_predicted.png')
+plt.show()
+
+
+# Plotting residuals
+residuals = y_test - y_pred
+plt.figure(figsize=(10, 6))
+plt.scatter(y_pred, residuals, color='blue', alpha=0.7)
+plt.axhline(y=0, color='red', linestyle='--')
+plt.xlabel('Predicted Values')
+plt.ylabel('Residuals')
+plt.title('Residuals vs Predicted Values')
+plt.grid(True)
+plt.savefig('/home/vivek/Downloads/boston-housing/plots/residuals_plot.png')
+plt.show()
+
+# Plotting histogram of residuals
+plt.figure(figsize=(10, 6))
+plt.hist(residuals, bins=30, color='blue', edgecolor='black')
+plt.xlabel('Residuals')
+plt.ylabel('Frequency')
+plt.title('Histogram of Residuals')
+plt.grid(True)
+plt.savefig('/home/vivek/Downloads/boston-housing/plots/residuals_histogram.png')
+plt.show()
+
+
+# Plotting prediction error distribution
+plt.figure(figsize=(10, 6))
+plt.hist(y_test - y_pred, bins=30, color='blue', edgecolor='black')
+plt.xlabel('Prediction Error')
+plt.ylabel('Frequency')
+plt.title('Distribution of Prediction Errors')
+plt.grid(True)
+plt.savefig('/home/vivek/Downloads/boston-housing/plots/prediction_error_distribution.png')
+plt.show()
+
+
