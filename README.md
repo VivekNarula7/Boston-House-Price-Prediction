@@ -1,5 +1,3 @@
-Yes, many of the techniques mentioned can be applied to regression problems. Here's how each technique fits into regression tasks:
-
 ### Techniques Applicable to Regression Problems
 
 1. **Polynomial Regression**
